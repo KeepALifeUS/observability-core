@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "_meta": {
+    "description": "2025 Observability Core TypeScript Configuration",
+    "version": "1.0.0",
+    "compliance": "Enterprise-2025",
+    "patterns": ["DDD", "EventSourcing", "Observability", "Enterprise", "AIFirst"],
+    "created": "2025-09-22",
+    "author": "Claude Enterprise Enterprise Architect",
+ "purpose": "TypeScript observability-core , "
+  },
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "common": ["../common/src"],
+      "common/*": ["../common/src/*"],
+      "@observability/*": ["./src/*"],
+      "config": ["../config/src"],
+      "config/*": ["../config/src/*"],
+      "security-monitoring": ["../security-monitoring/src"],
+      "security-monitoring/*": ["../security-monitoring/src/*"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**",
+    "coverage",
+    ".turbo"
+  ],
+  "_observability_features": {
+    "metrics": {
+      "prometheus": true,
+      "grafana_integration": true,
+      "custom_metrics": true,
+      "performance_monitoring": true
+    },
+    "tracing": {
+      "distributed_tracing": true,
+      "opentelemetry": true,
+      "jaeger_integration": true,
+      "request_correlation": true
+    },
+    "logging": {
+      "structured_logging": true,
+      "log_aggregation": true,
+      "elk_stack": true,
+      "security_logging": true
+    },
+    "alerting": {
+      "real_time_alerts": true,
+      "anomaly_detection": true,
+      "threshold_monitoring": true,
+      "incident_management": true
+    }
+  },
+  "_enterprise_compliance": {
+    "enterprise_patterns": true,
+    "microservices_observability": true,
+    "cloud_native_monitoring": true,
+    "devsecops_integration": true,
+    "ai_driven_insights": true,
+    "sustainable_monitoring": true
+  }
+}

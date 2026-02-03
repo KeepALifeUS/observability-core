@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+coverage/
+*.js
+*.d.ts
+*.js.map
+!jest.config.js
+!jest.setup.js
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.idea/
+.vscode/
