@@ -199,3 +199,7 @@ export class OrderService {
 ## License
 
 MIT
+
+## Support
+
+For questions and support, please open an issue on GitHub.
